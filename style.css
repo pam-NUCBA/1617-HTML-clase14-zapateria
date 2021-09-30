@@ -1,0 +1,78 @@
+/* acuérdense que esto lo traemos de la página de google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=PT+Sans&display=swap');
+
+/* resets */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --light: #ececec;
+    --light-transparent: #ececec69;
+    --green-light: #cad2c5;
+    --green-medium: #52796f;
+    --green-dark: #2f3e46;
+    --dark: #171e22;
+}
+
+p,
+h2,
+h3 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* grid */
+.container {
+    display: grid;
+    grid-template-areas: 
+        'header header header header'
+        'main main main aside'
+        'footer footer footer footer';
+}
+
+header {
+    background-color: var(--green-dark);
+    grid-area: header;
+    /* va a ser un padre flex */
+    display: flex;
+    align-items: center;
+}
+
+/* header */
+.logo {
+    height: 50px;
+    width: auto;
+    padding-right: 30px;
+}
+
+h1 {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Ephesis', cursive;
+    font-size: 3em;
+}
+
+h1:hover {
+    color: var(--green-light);
+}
+
+/* main */
+.product {
+    height: 500px;
+}
+
+.product img {
+    width: 80%;
+    display: block;
+}
+
+
+/* aside */
+
+/* footer */
+
+/* mediaqueries */
