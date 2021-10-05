@@ -1,78 +1,175 @@
+@charset "UTF-8";
 /* acuérdense que esto lo traemos de la página de google fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=PT+Sans&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&family=PT+Sans&display=swap");
 /* resets */
-
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    --light: #ececec;
-    --light-transparent: #ececec69;
-    --green-light: #cad2c5;
-    --green-medium: #52796f;
-    --green-dark: #2f3e46;
-    --dark: #171e22;
+  --light: #ececec;
+  --light-transparent: #ececec69;
+  --green-light: #cad2c5;
+  --green-medium: #52796f;
+  --green-dark: #2f3e46;
+  --dark: #171e22;
 }
 
 p,
 h2,
 h3 {
-    font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 /* grid */
 .container {
-    display: grid;
-    grid-template-areas: 
-        'header header header header'
-        'main main main aside'
-        'footer footer footer footer';
-}
-
-header {
-    background-color: var(--green-dark);
-    grid-area: header;
-    /* va a ser un padre flex */
-    display: flex;
-    align-items: center;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header header header header" "main main main aside" "footer footer footer footer";
 }
 
 /* header */
-.logo {
-    height: 50px;
-    width: auto;
-    padding-right: 30px;
+header {
+  background-color: var(--green-dark);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+  /* va a ser un padre flex */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-h1 {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--light);
-    font-family: 'Ephesis', cursive;
-    font-size: 3em;
+header .logo {
+  height: 50px;
+  width: auto;
+  padding-right: 30px;
 }
 
-h1:hover {
-    color: var(--green-light);
+header h1 {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--light);
+  font-family: "Ephesis", cursive;
+  font-size: 3em;
+}
+
+header h1:hover {
+  color: var(--green-light);
 }
 
 /* main */
-.product {
-    height: 500px;
+main {
+  background-color: var(--light);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  padding: 3% 2%;
 }
 
-.product img {
-    width: 80%;
-    display: block;
+main .containerProducts {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
 }
 
+main .containerProducts .product {
+  height: 700px;
+  border: 1px solid var(--green-light);
+  margin: 3%;
+  padding: 3%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 450px 150px 30px auto;
+      grid-template-rows: 450px 150px 30px auto;
+  -webkit-box-shadow: 2px 2px 4px 2px var(--green-light);
+          box-shadow: 2px 2px 4px 2px var(--green-light);
+}
+
+main .containerProducts .product img {
+  width: 80%;
+  display: block;
+  margin: auto auto 100px auto;
+}
+
+main .containerProducts .product .btn {
+  -webkit-box-shadow: 3px 1px 7px -2px var(--green-dark);
+          box-shadow: 3px 1px 7px -2px var(--green-dark);
+  background-color: var(--green-medium);
+  border-radius: 20px;
+  border: 1px solid var(--green-dark);
+  display: block;
+  margin: 5% auto 0 auto;
+  cursor: pointer;
+  color: var(--light);
+  font-family: "PT Sans", sans-serif;
+  font-size: 1em;
+  padding: 3px 40px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px var(--green-dark);
+}
+
+main .containerProducts .product .btn:hover {
+  background-color: var(--dark);
+}
 
 /* aside */
+aside {
+  background-color: var(--green-light);
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: aside;
+}
+
+aside p,
+aside h3 {
+  padding: 5%;
+}
+
+aside figure {
+  display: block;
+  text-align: center;
+  background-color: var(--light-transparent);
+  margin: 5%;
+  padding: 5%;
+  border-radius: 20px;
+}
 
 /* footer */
+footer {
+  background-color: var(--green-dark);
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-/* mediaqueries */
+footer p {
+  color: var(--light);
+  font-family: "Ephesis", cursive;
+  font-size: 2em;
+}
+
+/* mediaqueries... les tocan a ustedes */
+@media (max-width: 1440px) {
+  main .containerProducts {
+    background-color: #171e22;
+  }
+}
+/*# sourceMappingURL=style.css.map */
